@@ -23,14 +23,33 @@ or a file with any number of numbers.
 
 # Question 1
 OUTPUT_FILE = "name.txt"
+
 name = input("Enter your name: ")
 out_file = open(OUTPUT_FILE, 'w')
 print(f"{name}", file=out_file)
 out_file.close()
-
-# Question 2
+#
+# # Question 2
 in_file = open(OUTPUT_FILE, 'r')
 name = in_file.read()
 in_file.close()
 print(f"Your name is {name}")
 
+# Question 3
+OUTPUT_FILE_2 = "numbers.txt"
+
+in_file = open(OUTPUT_FILE_2, 'r')
+total = 0
+for i in range(0, 2):
+    total = total + int(in_file.readline())
+in_file.close()
+print(f"{total}")
+
+# Question 4
+in_file = open(OUTPUT_FILE_2, 'r')
+total = 0
+for line in in_file:
+    number = int(line)
+    total = total + number
+in_file.close()
+print(f"{total}")
