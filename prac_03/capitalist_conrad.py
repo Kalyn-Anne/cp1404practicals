@@ -18,7 +18,7 @@ OUTPUT_FILE = "test.txt"
 
 price = INITIAL_PRICE
 out_file = open(OUTPUT_FILE, 'w')
-print(f"Starting price: ${price:,.2f}",file=out_file)
+print(f"Starting price: ${price:,.2f}", file=out_file)
 
 number_of_days = 0
 while MIN_PRICE <= price <= MAX_PRICE:
