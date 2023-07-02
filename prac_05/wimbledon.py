@@ -5,6 +5,7 @@ took roughly an hour
 
 Used suggested solution to rename items (like records)
 """
+
 FILENAME = "wimbledon"
 COUNTRY_INDEX = 1
 CHAMPION_INDEX = 2
