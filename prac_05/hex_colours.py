@@ -1,3 +1,4 @@
+
 """
 CP1404/CP5632 Practical
 Program that allows you to look up hexadecimal colour,
