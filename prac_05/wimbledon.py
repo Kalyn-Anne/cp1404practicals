@@ -1,5 +1,9 @@
 """
 CP1404 Practical
+forgot to time
+took roughly an hour
+
+Used suggested solution to rename items (like records)
 """
 FILENAME = "wimbledon"
 COUNTRY_INDEX = 1
@@ -26,8 +30,13 @@ def process_records(records):
 
 
 def display_results(champion_to_count, countries):
-    print(champion_to_count)
-    print(countries)
+    print("Wimbledon Champions: ")
+    for champion, count in champion_to_count.items():
+        print(champion, count)
+    print("")
+    print(f"These {len(countries)} countries have won Wimbledon: ")
+    sorted_countries = sorted(countries)
+    print(", ".join(country for country in sorted_countries))
 
 
 def get_records(filename):
