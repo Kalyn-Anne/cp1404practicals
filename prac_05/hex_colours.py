@@ -10,3 +10,12 @@ COLOUR_TO_CODE = {"Absolute Zero": "#0048ba", "Asparagus": "#87a96b", "Beaver": 
                   "Corn": "#fbec5d", "#Eggplant": "#614051"}
 print(COLOUR_TO_CODE)
 print(len(COLOUR_TO_CODE))
+
+colour_name = input("Enter colour name: ").title()
+while colour_name != "":
+    if colour_name in COLOUR_TO_CODE:
+        print(colour_name, "is", COLOUR_TO_CODE[colour_name])
+    else:
+        print("Invalid colour name")
+    colour_name = input("Enter short state: ").title()
+
