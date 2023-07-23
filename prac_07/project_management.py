@@ -1,3 +1,5 @@
+from prac_07.project import Project
+
 MENU = """- (L)oad projects
 - (S)ave projects
 - (D)isplay projects
@@ -5,12 +7,15 @@ MENU = """- (L)oad projects
 - (A)dd new project
 - (U)pdate project
 - (Q)uit"""
+FILENAME = "projects.txt"
 
 
 def main():
     display_menu()
     choice = input(">>> ").upper()
-
+    projects = get_projects()
+    for projects in projects:
+        print(projects)
     while choice != "Q":
         if choice == "L":
             display_menu()
@@ -39,6 +44,19 @@ def main():
 
 def display_menu():
     print(MENU)
+
+
+def get_projects():
+    projects = []
+    input_file = open(FILENAME)
+    next(input_file)  # skips headers
+    for line in input_file:
+        line = line.strip()
+        parts = line.split('\t')
+        print(parts)
+        projects.append(Project(parts[0], parts[1], parts[2], parts[3], parts[-1]))
+    input_file.close()
+    return projects
 
 
 main()
