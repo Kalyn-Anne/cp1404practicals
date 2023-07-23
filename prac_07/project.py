@@ -14,6 +14,11 @@ class Project:
         self.cost_est = cost_est
         self.completion_rate = completion_rate
 
+    def __str__(self):
+        """Return a string representation of a Project."""
+        return f"{self.name} ({self.date}) estimated ${self.cost_est:,.2f} in cost at {self.completion_rate}% " \
+               f"complete at a level {self.priority} priority "
+
     def is_complete(self):
         return self.completion_rate == 100
 

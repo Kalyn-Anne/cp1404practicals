@@ -11,9 +11,11 @@ FILENAME = "projects.txt"
 
 
 def main():
+    projects = get_projects()
+    for projects in projects:
+        print(projects)
     display_menu()
     choice = input(">>> ").upper()
-    projects = get_projects()
     while choice != "Q":
         if choice == "L":
             for projects in projects:
