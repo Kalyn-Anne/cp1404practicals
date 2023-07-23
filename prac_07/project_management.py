@@ -14,10 +14,10 @@ def main():
     display_menu()
     choice = input(">>> ").upper()
     projects = get_projects()
-    for projects in projects:
-        print(projects)
     while choice != "Q":
         if choice == "L":
+            for projects in projects:
+                print(f"{projects.name}, is complete:{projects.is_complete()}")
             display_menu()
             choice = input(">>> ").upper()
         if choice == "S":
@@ -53,7 +53,10 @@ def get_projects():
     for line in input_file:
         line = line.strip()
         parts = line.split('\t')
-        print(parts)
+        # print(parts) # makes sure parts are right
+        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
+        parts[3] = float(parts[3])  # Make the number an float (ignore PyCharm's warning)
+        parts[-1] = int(parts[-1])  # Make the number an integer (ignore PyCharm's warning)
         projects.append(Project(parts[0], parts[1], parts[2], parts[3], parts[-1]))
     input_file.close()
     return projects
