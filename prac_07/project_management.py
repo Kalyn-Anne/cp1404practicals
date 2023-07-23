@@ -30,6 +30,7 @@ def main():
             display_menu()
             choice = input(">>> ").upper()
         elif choice == "A":
+            user_add_project(projects)
             display_menu()
             choice = input(">>> ").upper()
         elif choice == "U":
@@ -60,6 +61,20 @@ def get_projects():
         projects.append(Project(parts[0], parts[1], parts[2], parts[3], parts[-1]))
     input_file.close()
     return projects
+
+
+def user_add_project(projects):
+    name = input("Name: ")
+    while name != "":
+        date = input("Date: ( example: 29/12/1978 ): ")
+        priority = int(input("Priority lvl (0-10): "))
+        cost_est = float(input("Cost Estimate: $"))
+        completion_rate = int(input("Completion rate (0-100% complete): "))
+        project_to_add = projects(name, date, priority, cost_est, completion_rate)
+        projects.append(project_to_add)
+        print(project_to_add, "added.")
+        name = input("Name: ")
+    pass
 
 
 main()
