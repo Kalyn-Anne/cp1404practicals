@@ -53,6 +53,7 @@ def user_add_guitar(guitars):
 
 
 def save_to_file(guitars):
+    pass
 
 
 main()
