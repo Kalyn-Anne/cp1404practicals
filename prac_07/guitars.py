@@ -15,14 +15,16 @@ save guitars to file
 TEST
 """
 from prac_07.guitar import Guitar
+import csv
 
 FILENAME = "guitars.csv"
 
 
 def main():
-    guitar = get_guitars()
-    for guitar in sorted(guitar):
-        print(guitar)
+    guitars = get_guitars()
+    user_add_guitar(guitars)
+    for guitars in sorted(guitars):
+        print(guitars)
 
 
 def get_guitars():
@@ -38,12 +40,19 @@ def get_guitars():
     return guitars
 
 
-def user_add_guitar():
+def user_add_guitar(guitars):
+    name = input("Name: ")
+    while name != "":
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitar_to_add = Guitar(name, year, cost)
+        guitars.append(guitar_to_add)
+        print(guitar_to_add, "added.")
+        name = input("Name: ")
     pass
 
 
-def save_to_file():
-    pass
+def save_to_file(guitars):
 
 
 main()
